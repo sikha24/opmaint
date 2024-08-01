@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   //Text Color
+
   static Color txtPrimary = hexToColor("#3B3B3B");
   static Color txtSecondary = hexToColor("#5C5C5C");
   static Color txtPara = hexToColor('#838383');
@@ -14,17 +15,17 @@ class AppColors {
   static Color btnSecondary = hexToColor('#E9EDF3');
 
   //Icons & Vectors Color
-  static Color iconPrimary = hexToColor("#3B3B3B");
+  static Color iconPrimary = Colors.white;
 
   //Background Color
-  static Color backgroundPrimary = hexToColor("#FFFFFF");
+  static Color backgroundPrimary = Colors.black;
   static Color dividerPrimary = hexToColor('#E9EDF3');
 
   //Solid Color
   static Color lightSolid = hexToColor('#E9EDF3');
   static Color lightGrey = hexToColor('#A9A9A9');
   static Color solidGrey = hexToColor('#3B3B3B');
-  static Color lightOrange = hexToColor("#FFAE4E");
+  static Color lightOrange = const Color.fromARGB(255, 189, 112, 11);
   static Color deepOrange = hexToColor("#ff4c41");
   static Color bloodRed = hexToColor("#EE1919");
   static Color offWhite = hexToColor('#F2F3F5');

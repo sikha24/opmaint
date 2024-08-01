@@ -5,14 +5,14 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class ApplicationTheme {
   static ThemeData lightTheme = ThemeData(
       scaffoldBackgroundColor: AppColors.backgroundPrimary,
-      iconTheme: IconThemeData(color: AppColors.iconPrimary),
+      iconTheme: IconThemeData(color: AppColors.lightGrey, size: 20.sp),
       dividerTheme:
           DividerThemeData(thickness: 1.2, color: AppColors.dividerPrimary),
       checkboxTheme: CheckboxThemeData(
           side: BorderSide.none,
-          checkColor: MaterialStateProperty.all(Colors.white),
-          fillColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.selected)) {
+          checkColor: WidgetStateProperty.all(Colors.white),
+          fillColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
               return AppColors.deepOrange;
             } else {
               return AppColors.lightSolid;

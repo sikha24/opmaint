@@ -20,8 +20,8 @@ Note _$NoteFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Note {
+  String get id => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  int get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $NoteCopyWith<$Res> {
   factory $NoteCopyWith(Note value, $Res Function(Note) then) =
       _$NoteCopyWithImpl<$Res, Note>;
   @useResult
-  $Res call({String content, int id});
+  $Res call({String id, String content});
 }
 
 /// @nodoc
@@ -49,18 +49,17 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? content = null,
     Object? id = null,
+    Object? content = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id ? _value.id : id as String,
+      // ignore: cast_nullable_to_non_nullable
+
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
     ) as $Val);
   }
 }
@@ -72,7 +71,7 @@ abstract class _$$NoteImplCopyWith<$Res> implements $NoteCopyWith<$Res> {
       __$$NoteImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String content, int id});
+  $Res call({String id, String content});
 }
 
 /// @nodoc
@@ -85,18 +84,18 @@ class __$$NoteImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? content = null,
     Object? id = null,
+    Object? content = null,
   }) {
     return _then(_$NoteImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -104,19 +103,19 @@ class __$$NoteImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NoteImpl implements _Note {
-  const _$NoteImpl({required this.content, required this.id});
+  _$NoteImpl({required this.id, required this.content});
 
   factory _$NoteImpl.fromJson(Map<String, dynamic> json) =>
       _$$NoteImplFromJson(json);
 
   @override
-  final String content;
+  final String id;
   @override
-  final int id;
+  final String content;
 
   @override
   String toString() {
-    return 'Note(content: $content, id: $id)';
+    return 'Note(id: $id, content: $content)';
   }
 
   @override
@@ -124,13 +123,13 @@ class _$NoteImpl implements _Note {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NoteImpl &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.content, content) || other.content == content));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, id);
+  int get hashCode => Object.hash(runtimeType, id, content);
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +146,15 @@ class _$NoteImpl implements _Note {
 }
 
 abstract class _Note implements Note {
-  const factory _Note({required final String content, required final int id}) =
+  factory _Note({required final String id, required final String content}) =
       _$NoteImpl;
 
   factory _Note.fromJson(Map<String, dynamic> json) = _$NoteImpl.fromJson;
 
   @override
-  String get content;
+  String get id;
   @override
-  int get id;
+  String get content;
   @override
   @JsonKey(ignore: true)
   _$$NoteImplCopyWith<_$NoteImpl> get copyWith =>

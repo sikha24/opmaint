@@ -7,12 +7,12 @@ part of 'note_model.dart';
 // **************************************************************************
 
 _$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
+      id: json['id'] as String,
       content: json['content'] as String,
-      id: (json['id'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
     <String, dynamic>{
-      'content': instance.content,
       'id': instance.id,
+      'content': instance.content,
     };
