@@ -6,5 +6,5 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-command to start a projec
+command to start a project
 # flutter run
